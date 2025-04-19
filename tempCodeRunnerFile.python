@@ -1,0 +1,8 @@
+list = [1,2,3,4,5]
+
+def example(n):
+    if len(n) == 0:
+        return 0
+    else:
+        return n[0] + example(n[1:])
+print(example(list))

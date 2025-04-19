@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input, select, textarea {
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #2E86C1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #1A5276;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Edit Product</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ fm.as_p }}
+            <input type="submit" value="Update Product">
+        </form>
+        <a href="{% url 'home' %}">Back to Home</a>
+    </div>
+</body>
+</html>
